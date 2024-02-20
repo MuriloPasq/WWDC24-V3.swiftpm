@@ -1,8 +1,18 @@
 import SwiftUI
+import SpriteKit
 
 struct GameView: View {
     let sense: Sense
+    
     @State var personagem : Personagem = .awake
+    @StateObject var delegate = GameDelegate()
+    
+    var scene : GameScene {
+        let s = GameScene()
+        s.scaleMode = .aspectFill
+        s.gameDelegate = delegate
+        return s
+    }
     
     var body: some View {
         
@@ -10,10 +20,7 @@ struct GameView: View {
             Image("scenarioNormal")
                 .resizable()
                 .scaledToFit()
-            Image("Personagem\(personagem.rawValue.capitalized)")
-                .resizable()
-                .scaledToFit()
-
+            SpriteView(scene: scene)
         }
         .frame(maxWidth: UIScreen.current?.bounds.width, maxHeight: UIScreen.current?.bounds.height)
     }
