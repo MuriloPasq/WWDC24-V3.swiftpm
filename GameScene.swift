@@ -4,23 +4,23 @@ import SpriteKit
 class GameScene: SKScene {
     weak var gameDelegate: GameDelegate?
     
-    private var scenario: SKSpriteNode?
-    private var personage: SKSpriteNode?
-    private var socks: SKSpriteNode?
-    private var window: SKSpriteNode?
-    private var mug: SKSpriteNode?
-    private var food: SKSpriteNode?
-    private var lamp: SKSpriteNode?
-    private var celphone: SKSpriteNode?
-    private var incense: SKSpriteNode?
-    private var mobile: SKSpriteNode?
-    private var shelf: SKSpriteNode?
+    private var scenario = SKSpriteNode(imageNamed: "ScenarioDefault")
+    private var personagem = SKSpriteNode(imageNamed: "PersonagemDefault")
+    private var socks = SKSpriteNode(imageNamed: "SocksDisabled")
+    private var window = SKSpriteNode(imageNamed: "WindowDisabledClosed")
+    private var mug = SKSpriteNode(imageNamed: "MugDisabled")
+    private var food = SKSpriteNode(imageNamed: "FoodDisabled")
+    private var lamp = SKSpriteNode(imageNamed: "LampDisabled")
+    private var celphone = SKSpriteNode(imageNamed: "CelphoneDisabled")
+    private var incense = SKSpriteNode(imageNamed: "IncenseDisabled")
+    private var mobileLeft = SKSpriteNode(imageNamed: "MobileDisabled")
+    private var mobileRight = SKSpriteNode(imageNamed: "MobileDisabled")
+    private var shelf = SKSpriteNode(imageNamed: "ShelfDisabled")
     
     
-
     override func didMove(to view: SKView) {
         setupScenario()
-        setupPersonage()
+        setupPersonagem()
         setupSocks()
         setupWindow()
         setupMug()
@@ -30,80 +30,98 @@ class GameScene: SKScene {
         setupIncense()
         setupMobile()
         setupShelf()
+        
+        self.anchorPoint = CGPoint(x: 0, y: 1)
     }
     
     private func setupScenario() {
-        guard let scenario = SKSpriteNode(fileNamed: "ScenarioDefault") else { return }
-        self.scenario = scenario
+        scenario.anchorPoint = CGPoint(x: 0, y: 1)
+        scenario.position = CGPoint(x: 70, y: -200)
+        scenario.setScale(1.0)
         addChild(scenario)
     }
     
-    private func setupPersonage() {
-        guard let personage = SKSpriteNode(fileNamed: "PersonageDefault") else { return }
-        self.personage = personage
-        addChild(personage)
+    private func setupPersonagem() {
+        personagem.anchorPoint = CGPoint(x: 0, y: 1)
+        personagem.position = CGPoint(x: 70, y: -200)
+        personagem.setScale(1.0)
+        addChild(personagem)
                 
     }
     
     private func setupSocks() {
-        guard let socks = SKSpriteNode(fileNamed: "SocksDefault") else { return }
-        self.socks = socks
+        socks.anchorPoint = CGPoint(x: 0, y: 1)
+        socks.position = CGPoint(x: 709, y: -428)
+        socks.setScale(1.0)
         addChild(socks)
                 
     }
     
     private func setupWindow() {
-        guard let window = SKSpriteNode(fileNamed: "WindowDefault") else { return }
-        self.window = window
+        window.anchorPoint = CGPoint(x: 0, y: 1)
+        window.position = CGPoint(x: 72, y: -27)
+        window.setScale(1.0)
         addChild(window)
                 
     }
     
     private func setupMug() {
-        guard let mug = SKSpriteNode(fileNamed: "MugDefault") else { return }
-        self.mug = mug
+        mug.anchorPoint = CGPoint(x: 0, y: 1)
+        mug.position = CGPoint(x: 599, y: -404)
+        mug.setScale(1.0)
         addChild(mug)
                 
     }
     
     private func setupFood() {
-        guard let food = SKSpriteNode(fileNamed: "FoodDefault") else { return }
-        self.food = food
+        food.anchorPoint = CGPoint(x: 0, y: 1)
+        food.position = CGPoint(x: 340, y: -246)
+        food.setScale(1.0)
         addChild(food)
                 
     }
     
     private func setupLamp() {
-        guard let lamp = SKSpriteNode(fileNamed: "LampDefault") else { return }
-        self.lamp = lamp
+        lamp.anchorPoint = CGPoint(x: 0, y: 1)
+        lamp.position = CGPoint(x: 584, y: -244)
+        lamp.setScale(1.0)
         addChild(lamp)
                 
     }
     
     private func setupCelphone() {
-        guard let celphone = SKSpriteNode(fileNamed: "CelphoneDefault") else { return }
-        self.celphone = celphone
+        celphone.anchorPoint = CGPoint(x: 0, y: 1)
+        celphone.position = CGPoint(x: 294, y: -233)
+        celphone.setScale(1.0)
         addChild(celphone)
                 
     }
     
     private func setupIncense() {
-        guard let incense = SKSpriteNode(fileNamed: "IncenseDefault") else { return }
-        self.incense = incense
+        incense.anchorPoint = CGPoint(x: 0, y: 1)
+        incense.position = CGPoint(x: 547, y: -100)
+        incense.setScale(1.0)
         addChild(incense)
                 
     }
     
     private func setupMobile() {
-        guard let mobile = SKSpriteNode(fileNamed: "MobileDefault") else { return }
-        self.mobile = mobile
-        addChild(mobile)
+        mobileLeft.anchorPoint = CGPoint(x: 0, y: 1)
+        mobileLeft.position = CGPoint(x: 585, y: -390)
+        mobileLeft.setScale(1.0)
+        addChild(mobileLeft)
+        
+        mobileRight.anchorPoint = CGPoint(x: 0, y: 1)
+        mobileRight.position = CGPoint(x: 25, y: -390)
+        mobileRight.setScale(1.0)
+        addChild(mobileRight)
                 
     }
     
     private func setupShelf() {
-        guard let shelf = SKSpriteNode(fileNamed: "ShelfDefault") else { return }
-        self.shelf = shelf
+        shelf.anchorPoint = CGPoint(x: 0, y: 1)
+        shelf.position = CGPoint(x: 690, y: -62)
+        shelf.setScale(1.0)
         addChild(shelf)
                 
     }
